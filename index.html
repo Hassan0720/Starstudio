@@ -1,0 +1,1355 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color"
+      content="#0b0b0b">
+
+<title>STAR STUDIO</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    font-family:
+        Inter,
+        Arial,
+        sans-serif;
+
+    background: #080808;
+
+    color: #ffffff;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   MAIN CARD
+========================= */
+
+.card {
+
+    width: 100%;
+
+    max-width: 480px;
+
+    margin: auto;
+
+    min-height: 100vh;
+
+    background: #0b0b0b;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    position: relative;
+
+    min-height: 470px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    padding: 30px 24px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.05) 20%,
+            rgba(0,0,0,0.55) 60%,
+            #0b0b0b 100%
+        );
+}
+
+
+/* HERO IMAGE */
+
+.hero-image {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 0;
+
+    opacity: 0.72;
+}
+
+
+/* HERO OVERLAY */
+
+.hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.05),
+            rgba(0,0,0,0.25) 45%,
+            rgba(11,11,11,1) 100%
+        );
+
+    z-index: 1;
+}
+
+
+/* =========================
+   BRAND
+========================= */
+
+.brand {
+
+    position: absolute;
+
+    top: 25px;
+
+    left: 24px;
+
+    right: 24px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    z-index: 3;
+}
+
+
+.logo {
+
+    width: 48px;
+
+    height: 48px;
+
+    border: 1px solid #d4af37;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #d4af37;
+
+    font-size: 23px;
+
+    background: rgba(0,0,0,0.35);
+
+    backdrop-filter: blur(5px);
+}
+
+
+.brand-name {
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+.brand-sub {
+
+    display: block;
+
+    margin-top: 2px;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    color: #d4af37;
+}
+
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 3;
+}
+
+
+.hero-content h1 {
+
+    font-size: 38px;
+
+    line-height: 1.05;
+
+    letter-spacing: 5px;
+
+    font-weight: 700;
+}
+
+
+.tagline {
+
+    margin-top: 10px;
+
+    color: #d4af37;
+
+    font-size: 11px;
+
+    letter-spacing: 1.4px;
+
+    text-transform: uppercase;
+}
+
+
+.sub-tagline {
+
+    margin-top: 8px;
+
+    color: #d0d0d0;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   QUICK ACTIONS
+========================= */
+
+.actions {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 8px;
+
+    padding: 18px 15px;
+
+    background: #101010;
+}
+
+
+.action {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    min-height: 70px;
+
+    border:
+        1px solid
+        #292929;
+
+    border-radius: 12px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    transition: 0.2s;
+}
+
+
+.action:hover {
+
+    border-color: #d4af37;
+
+    transform: translateY(-2px);
+}
+
+
+.action-icon {
+
+    width: 23px;
+
+    height: 23px;
+
+    stroke: #d4af37;
+
+    fill: none;
+
+    stroke-width: 1.7;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+
+    padding: 27px 21px;
+
+    border-top:
+        1px solid
+        #222222;
+}
+
+
+.kicker {
+
+    color: #d4af37;
+
+    font-size: 9px;
+
+    letter-spacing: 2.5px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 5px;
+}
+
+
+.section h2 {
+
+    font-size: 24px;
+
+    margin-bottom: 12px;
+
+    line-height: 1.2;
+}
+
+
+.about {
+
+    color: #b7b7b7;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   BUSINESS INFO
+========================= */
+
+.info {
+
+    display: grid;
+
+    gap: 13px;
+
+    margin-top: 20px;
+}
+
+
+.info-row {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 11px;
+
+    color: #cccccc;
+
+    font-size: 12px;
+}
+
+
+.info-icon {
+
+    width: 18px;
+
+    height: 18px;
+
+    flex: none;
+
+    stroke: #d4af37;
+
+    fill: none;
+
+    stroke-width: 1.7;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.services {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 9px;
+
+    margin-top: 16px;
+}
+
+
+.service {
+
+    padding: 15px 12px;
+
+    background: #121212;
+
+    border:
+        1px solid
+        #292929;
+
+    border-radius: 11px;
+
+    color: #eeeeee;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+}
+
+
+.service::before {
+
+    content: "✦";
+
+    color: #d4af37;
+
+    margin-right: 6px;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery {
+
+    display: grid;
+
+    grid-template-columns:
+        1.2fr
+        0.8fr;
+
+    gap: 7px;
+
+    margin-top: 16px;
+}
+
+
+.gallery-item {
+
+    width: 100%;
+
+    height: 125px;
+
+    object-fit: cover;
+
+    border-radius: 9px;
+
+    display: block;
+}
+
+
+.gallery-item:first-child {
+
+    height: 257px;
+
+    grid-row:
+        span 2;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+
+    margin: 25px 16px;
+
+    padding: 21px;
+
+    border:
+        1px solid
+        #332a17;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #171717,
+            #0e0e0e
+        );
+}
+
+
+.cta h3 {
+
+    font-size: 19px;
+
+    margin-bottom: 5px;
+}
+
+
+.cta p {
+
+    color: #929292;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    margin-bottom: 16px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 9px;
+}
+
+
+.btn {
+
+    width: 100%;
+
+    padding: 13px 8px;
+
+    border-radius: 10px;
+
+    border:
+        1px solid
+        #353535;
+
+    background: #151515;
+
+    color: #ffffff;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+
+.btn.gold {
+
+    background: #d4af37;
+
+    color: #111111;
+
+    border-color: #d4af37;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   SHARE BUTTON
+========================= */
+
+.share-wrapper {
+
+    padding:
+        0
+        16px
+        18px;
+}
+
+
+.share-btn {
+
+    width: 100%;
+
+    padding: 13px;
+
+    border:
+        1px solid
+        #333333;
+
+    border-radius: 10px;
+
+    background: #151515;
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+
+    text-align: center;
+
+    padding:
+        5px
+        20px
+        28px;
+
+    color: #555555;
+
+    font-size: 9px;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+.toast {
+
+    position: fixed;
+
+    left: 50%;
+
+    bottom: 24px;
+
+    transform:
+        translateX(-50%)
+        translateY(20px);
+
+    background: #d4af37;
+
+    color: #111111;
+
+    padding:
+        10px
+        16px;
+
+    border-radius: 30px;
+
+    font-size: 11px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: 0.25s;
+
+    z-index: 99;
+}
+
+
+.toast.show {
+
+    opacity: 1;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:360px) {
+
+    .hero-content h1 {
+
+        font-size: 31px;
+
+    }
+
+    .actions {
+
+        gap: 5px;
+
+    }
+
+    .action {
+
+        font-size: 9px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+
+
+<img
+    src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"
+    alt="STAR STUDIO"
+    class="hero-image"
+>
+
+
+
+<div class="brand">
+
+    <div class="logo">
+
+        ★
+
+    </div>
+
+    <div>
+
+        <div class="brand-name">
+
+            STAR STUDIO
+        </div>
+
+        <span class="brand-sub">
+
+            PHOTOGRAPHY • FILMS
+
+        </span>
+
+    </div>
+
+</div>
+
+
+<div class="hero-content">
+
+    <h1>
+
+        STAR STUDIO
+    </h1>
+
+    <div class="tagline">
+
+        Photography • Videography • Creative Stories
+    </div>
+
+    <div class="sub-tagline">
+
+        Capturing moments. Creating memories.
+
+    </div>
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================
+     QUICK ACTIONS
+========================= -->
+
+<nav class="actions">
+
+
+<a
+    class="action"
+    href="tel:+919789591970"
+>
+
+<svg
+    class="action-icon"
+    viewBox="0 0 24 24"
+>
+<path d="M5 4l4-1 2 5-2 2c1.2 2.4 2.6 3.8 5 5l2-2 5 2-1 4C12 18 5 11 5 4z"/>
+</svg>
+
+Call
+
+</a>
+
+
+
+<a
+    class="action"
+    href="https://wa.me/919789591970"
+    target="_blank"
+>
+
+<svg
+    class="action-icon"
+    viewBox="0 0 24 24"
+>
+<path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5z"/>
+<path d="M9 9.5c.5 2 1.5 3 3.5 4"/>
+</svg>
+
+WhatsApp
+
+</a>
+
+
+
+<a
+    class="action"
+    href="https://www.google.com/maps/search/?api=1&query=Kerala%2C+India"
+    target="_blank"
+>
+
+<svg
+    class="action-icon"
+    viewBox="0 0 24 24"
+>
+<path d="M12 21s7-6.2 7-12A7 7 0 1 0 5 9c0 5.8 7 12 7 12z"/>
+<circle cx="12" cy="9" r="2.3"/>
+</svg>
+
+Location
+
+</a>
+
+
+
+<a
+    class="action"
+    href="https://www.instagram.com/simply_mindmap?stkn=OW5nNnh1dWpwdTI4"
+    target="_blank"
+>
+
+<svg
+    class="action-icon"
+    viewBox="0 0 24 24"
+>
+<rect x="4" y="4" width="16" height="16" rx="4"/>
+<circle cx="12" cy="12" r="3.5"/>
+<circle cx="17.2" cy="6.8" r="1"/>
+</svg>
+
+Instagram
+
+</a>
+
+
+</nav>
+
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="section">
+
+
+<div class="kicker">
+
+    About Us
+
+</div>
+
+
+<h2>
+
+    Stories worth remembering.
+
+</h2>
+
+
+<p class="about">
+
+    Star Studio is a creative photography and videography studio in Kerala, creating timeless visuals for weddings, portraits, celebrations and special moments.
+</p>
+
+
+<div class="info">
+
+
+<div class="info-row">
+
+<svg
+    class="info-icon"
+    viewBox="0 0 24 24"
+>
+<path d="M12 21s7-6.2 7-12A7 7 0 1 0 5 9c0 5.8 7 12 7 12z"/>
+<circle cx="12" cy="9" r="2.3"/>
+</svg>
+
+<span>
+
+Kerala, India
+</span>
+
+</div>
+
+
+
+<div class="info-row">
+
+<svg
+    class="info-icon"
+    viewBox="0 0 24 24"
+>
+<circle cx="12" cy="12" r="8"/>
+<path d="M12 7v5l3 2"/>
+</svg>
+
+<span>
+
+Mon – Sat: 9:00 AM – 7:00 PM
+</span>
+
+</div>
+
+
+
+<div class="info-row">
+
+<svg
+    class="info-icon"
+    viewBox="0 0 24 24"
+>
+<path d="M5 4l4-1 2 5-2 2c1.2 2.4 2.6 3.8 5 5l2-2 5 2-1 4C12 18 5 11 5 4z"/>
+</svg>
+
+<span>
+
++91 9789591970
+</span>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section class="section">
+
+
+<div class="kicker">
+
+    What We Do
+
+</div>
+
+
+<h2>
+
+    Our Services
+
+</h2>
+
+
+<div class="services">
+
+
+
+<div class="service">
+
+Wedding Photography
+</div>
+
+
+<div class="service">
+
+Wedding Films
+</div>
+
+
+<div class="service">
+
+Portrait Photography
+</div>
+
+
+<div class="service">
+
+Pre-Wedding Shoots
+</div>
+
+
+<div class="service">
+
+Events &amp; Functions
+</div>
+
+
+<div class="service">
+
+Studio Sessions
+</div>
+
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     GALLERY
+========================= -->
+
+
+<section class="section">
+
+
+<div class="kicker">
+
+    Selected Work
+
+</div>
+
+
+<h2>
+
+    Our Gallery
+
+</h2>
+
+
+<div class="gallery">
+
+
+
+<img
+    src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&amp;fit=crop&amp;w=800&amp;q=85"
+    alt="STAR STUDIO Gallery"
+    class="gallery-item"
+>
+
+
+<img
+    src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&amp;fit=crop&amp;w=600&amp;q=85"
+    alt="STAR STUDIO Gallery"
+    class="gallery-item"
+>
+
+
+<img
+    src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&amp;fit=crop&amp;w=600&amp;q=85"
+    alt="STAR STUDIO Gallery"
+    class="gallery-item"
+>
+
+
+
+</div>
+
+</section>
+
+
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<div class="cta">
+
+
+<h3>
+
+    Let's create something memorable.
+
+</h3>
+
+
+<p>
+
+Planning a wedding, event or photoshoot?
+Get in touch with Star Studio.
+
+</p>
+
+
+<div class="buttons">
+
+
+<a
+    class="btn gold"
+    href="https://wa.me/919789591970?text=Hi%20STAR+STUDIO%2C%20I%27d%20like%20to%20know%20more%20about%20your%20photography%20services."
+    target="_blank"
+>
+
+Enquire on WhatsApp
+
+</a>
+
+
+<button
+    class="btn"
+    onclick="saveContact()"
+>
+
+Save Contact
+
+</button>
+
+
+</div>
+
+</div>
+
+
+
+<!-- SHARE -->
+
+<div class="share-wrapper">
+
+<button
+    class="share-btn"
+    onclick="shareCard()"
+>
+
+↗ &nbsp; Share This Card
+
+</button>
+
+</div>
+
+
+
+<div class="footer">
+
+STAR STUDIO
+&nbsp;•&nbsp;
+
+Kerala, India
+&nbsp;•&nbsp;
+
+Photography & Videography
+
+</div>
+
+
+</div>
+
+
+<div
+    id="toast"
+    class="toast"
+></div>
+
+
+
+<script>
+
+/* =========================
+   TOAST
+========================= */
+
+function showToast(message) {
+
+    const toast =
+        document.getElementById('toast');
+
+    toast.textContent = message;
+
+    toast.classList.add('show');
+
+    setTimeout(function() {
+
+        toast.classList.remove('show');
+
+    }, 2200);
+
+}
+
+
+/* =========================
+   SAVE CONTACT
+========================= */
+
+
+function saveContact() {
+
+    const lines = [
+        "BEGIN:VCARD",
+        "VERSION:3.0",
+        "FN:STAR STUDIO",
+        "TEL;TYPE=CELL:+919789591970",
+        "END:VCARD"
+    ];
+
+    const vcard = lines.join("\r\n");
+
+    const blob = new Blob(
+        [vcard],
+        {
+            type: "text/vcard"
+        }
+    );
+
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+
+    link.href = url;
+    link.download = "Star-Studio.vcf";
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    document.body.removeChild(link);
+
+    setTimeout(function() {
+        URL.revokeObjectURL(url);
+    }, 1000);
+
+    showToast("Contact ready to save");
+}
+
+
+/* =========================
+   SHARE CARD
+========================= */
+
+async function shareCard() {
+
+    const shareData = {
+
+        title:
+            'STAR STUDIO',
+
+        text:
+            'STAR STUDIO - Photography • Videography • Creative Stories',
+
+        url:
+            window.location.href
+
+    };
+
+
+    if (navigator.share) {
+
+        try {
+
+            await navigator.share(
+                shareData
+            );
+
+            showToast('Share opened');
+
+            return;
+
+        } catch (error) {
+
+            // User closed share sheet
+
+        }
+
+    }
+
+
+    try {
+
+        await navigator.clipboard.writeText(
+            window.location.href
+        );
+
+        showToast('Card link copied');
+
+    } catch (error) {
+
+        const textarea =
+            document.createElement('textarea');
+
+        textarea.value =
+            window.location.href;
+
+        document.body.appendChild(textarea);
+
+        textarea.select();
+
+        document.execCommand('copy');
+
+        textarea.remove();
+
+        showToast('Card link copied');
+
+    }
+
+}
+
+</script>
+
+
+</body>
+
+  </html>
